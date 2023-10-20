@@ -15,7 +15,7 @@ const Home = () => {
       {/* <CatagorySection/> */}
       <AboutSection />
 
-      <YoutubeSection />
+      {/* <YoutubeSection /> */}
       <BlogSection />
     </Fragment>
   );
