@@ -9,7 +9,7 @@ const About = () => {
       <Outlet />
       <div className="mr-2 ml-2 mt-5 mb-5">
         <AboutSection />
-        <YoutubeSection/>
+        {/* <YoutubeSection/> */}
       </div>
     </>
   );

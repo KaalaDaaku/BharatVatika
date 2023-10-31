@@ -14,9 +14,7 @@ const AboutSection = () => {
         <div className="row justify-content-center ml-sm-0 ml-lg-3 mr-sm-0 mr-lg-3 mt-3 mb-3">
           <h2>ABOUT US</h2>
           <hr />
-          <h4 className="mb-3">
-            We are a small scale indoor plant growers in Kandy, Sri Lanka.
-          </h4>
+          
           <p className="p-4">
             In our plant nursery, we nurture an excellent collection of high
             quality indoor and fruit plants for sale. We believe associating us
