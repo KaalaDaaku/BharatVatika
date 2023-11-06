@@ -9,7 +9,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useEffect } from "react";
-
+import "./form.css";
 
 const defaultFormState = {
   email: "",
@@ -103,58 +103,69 @@ const LoginForm = () => {
   };
 
   return (
-    <>
-      <form className="mb-5" onSubmit={handleSubmit}>
-        <div className="mb-5">
-          <h3>LOG IN</h3>
-        </div>
-        <div className="mb-3">
-          <label for="email" className="form-label">
-            Username or email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
-        </div>
-        <div className="mb-3">
-          <label for="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            onChange={handleChange}
-            name="password"
-            value={password}
-          />
-        </div>
-        <button type="submit" className="btn btn-success mt-4 w-100">
-          Sign In
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary mt-4 w-100"
-          onClick={signInWithGooglePU}
-        >
-          Sign In With Google
-        </button>
-        <div className="row justify-content-center">
-          <a
-            className="link-dark mt-4 text-center"
-            data-bs-toggle="modal"
-            data-bs-target="#forgetPasswordModal"
+    <><div className="bg">
+      <div className="form">
+        <form className="mb-5"  onSubmit={handleSubmit}>
+          <div className="text1">
+            <h3>LOG IN</h3>
+          </div>
+          <div className="mb-3">
+            <label for="email" className="form-label">
+              Username or email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              onChange={handleChange}
+              name="email"
+              value={email}
+            />
+          </div>
+          <div className="mb-3">
+            <label for="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              onChange={handleChange}
+              name="password"
+              value={password}
+            />
+          </div>
+          <button type="submit" className="btn btn-success mt-4 w-100">
+            Sign In
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary mt-4 w-100"
+            onClick={signInWithGooglePU}
           >
-            Forgot Password?
-          </a>
-          New Account? <Link to='/register' >Register Here</Link> 
-        </div>
-      </form>
+            Sign In With Google
+          </button>
+          <br />
+          <div className="row justify-content-center">
+            <a
+              className="link-dark mt-4 text-center"
+              data-bs-toggle="modal"
+              data-bs-target="#forgetPasswordModal"
+            >
+              Forgot Password?
+            </a>
+            <br />
+            <br />
+            <br />
+          </div>
+          <div className="text">
+            New Account?
+            <br />
+            <Link to='/register' > Register Here</Link>
+            <br />
+          </div>
+        </form>
+      </div>
 
       <div
         className="modal fade"
@@ -200,10 +211,11 @@ const LoginForm = () => {
                   </button>
                 </div>
               </form>
+              </div>
             </div>
           </div>
         </div>
-        
+
       </div>
     </>
   );

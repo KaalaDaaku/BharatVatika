@@ -141,129 +141,131 @@ const CreateItem = () => {
 
     return (
         <div className="container">
-            <div className="border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
-                {fields && (
-                    <p className={`alert ${alertStatus === "danger" ? "alert-danger" : "alert-success"}`}>
-                        {msg}
-                    </p>
-                )}
+            <div className="summet">
+                <div className="border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
+                    {fields && (
+                        <p className={`alert ${alertStatus === "danger" ? "alert-danger" : "alert-success"}`}>
+                            {msg}
+                        </p>
+                    )}
 
-                <div className="image-container group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md-h-340 cursor-pointer rounded-lg">
-                    {isLoading ? (
-                        <p>Loading...</p>
-                    ) : (
-                        <>
-                            {!imageAsset ? (
-                                <>
-                                    <label className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
-                                        <div className="w-full h-full flex flex-col items-center justify-center gap-2">
-                                            {/* <p className="text-gray-500 hover:text-gray-700">
+                    <div className="image-container group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md-h-340 cursor-pointer rounded-lg">
+                        {isLoading ? (
+                            <p>Loading...</p>
+                        ) : (
+                            <>
+                                {!imageAsset ? (
+                                    <>
+                                        <label className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
+                                            <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                                                {/* <p className="text-gray-500 hover:text-gray-700">
                             Click here to upload
                           </p> */}
+                                            </div>
+                                            <input
+                                                type="file"
+                                                name="uploadimage"
+                                                accept="image/*"
+                                                onChange={uploadImage}
+                                                className="w-0 h-0"
+                                            />
+                                        </label>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="relative h-full">
+                                            <img
+                                                src={imageAsset}
+                                                alt="uploaded image"
+                                                className="image"
+                                            />
+                                            <button
+                                                type="button"
+                                                className="delete-button"
+                                                onClick={deleteImage}
+                                            >
+                                                <p>Delete</p>
+                                            </button>
                                         </div>
-                                        <input
-                                            type="file"
-                                            name="uploadimage"
-                                            accept="image/*"
-                                            onChange={uploadImage}
-                                            className="w-0 h-0"
-                                        />
-                                    </label>
-                                </>
-                            ) : (
-                                <>
-                                    <div className="relative h-full">
-                                        <img
-                                            src={imageAsset}
-                                            alt="uploaded image"
-                                            className="image"
-                                        />
-                                        <button
-                                            type="button"
-                                            className="delete-button"
-                                            onClick={deleteImage}
-                                        >
-                                            <p>Delete</p>
-                                        </button>
-                                    </div>
-                                </>
-                            )}
-                        </>
-                    )}
-                </div>
+                                    </>
+                                )}
+                            </>
+                        )}
+                    </div>
 
-                <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-                    <input
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        placeholder="Give me a title..."
-                        className="title-input"
-                    />
-                </div>
+                    <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+                        <input
+                            type="text"
+                            required
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            placeholder="Give me a title..."
+                            className="title-input"
+                        />
+                    </div>
 
-                <div className="w-full">
-                    <select
-                        onChange={(e) => setCategory(e.target.value)}
-                        className="select"
-                    >
-                        <option value="other" className="bg-white">
-                            Select Category
-                        </option>
-                        {categories &&
-                            categories.map((item) => (
-                                <option
-                                    key={item.id}
-                                    className="text-base border-0 outline-none capitalize bg-white text-headingColor"
-                                    value={item.urlParamName}
-                                >
-                                    {item.name}
-                                </option>
-                            ))}
-                    </select>
-                </div>
+                    <div className="w-full">
+                        <select
+                            onChange={(e) => setCategory(e.target.value)}
+                            className="select"
+                        >
+                            <option value="other" className="bg-white">
+                                Select Category
+                            </option>
+                            {categories &&
+                                categories.map((item) => (
+                                    <option
+                                        key={item.id}
+                                        className="text-base border-0 outline-none capitalize bg-white text-headingColor"
+                                        value={item.urlParamName}
+                                    >
+                                        {item.name}
+                                    </option>
+                                ))}
+                        </select>
+                    </div>
 
-                <div className="w-full">
-                    <select
-                        onChange={(e) => setPlantAge(e.target.value)}
-                        className="select"
-                    >
-                        <option value="other" className="bg-white">
-                            Plant Age
-                        </option>
-                        {age &&
-                            age.map((item) => (
-                                <option
-                                    key={item.id}
-                                    className="text-base border-0 outline-none capitalize bg-white text-headingColor"
-                                    value={item.ageValue}
-                                >
-                                    {item.ageValue}
-                                </option>
-                            ))}
-                    </select>
-                </div>
+                    <div className="w-full">
+                        <select
+                            onChange={(e) => setPlantAge(e.target.value)}
+                            className="select"
+                        >
+                            <option value="other" className="bg-white">
+                                Plant Age
+                            </option>
+                            {age &&
+                                age.map((item) => (
+                                    <option
+                                        key={item.id}
+                                        className="text-base border-0 outline-none capitalize bg-white text-headingColor"
+                                        value={item.ageValue}
+                                    >
+                                        {item.ageValue}
+                                    </option>
+                                ))}
+                        </select>
+                    </div>
 
-                <div className="w-full border border-grey-300 p-4 rounded-lg">
-                    <input
-                        type="text"
-                        required
-                        value={price}
-                        onChange={(e) => setPrice(e.target.value)}
-                        placeholder="Price in Rupees"
-                        className="price-input"
-                    />
-                </div>
+                    <div className="w-full border border-grey-300 p-4 rounded-lg">
+                        <input
+                            type="text"
+                            required
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            placeholder="Price in Rupees"
+                            className="price-input"
+                        />
+                    </div>
 
-                <div className="flex items-center w-full savebutton">
-                    <button
-                        type="button"
-                        className="save-button"
-                        onClick={saveDetails}
-                    >
-                        Save
-                    </button>
+                    <div className="flex items-center w-full savebutton">
+                        <button
+                            type="button"
+                            className="save-button"
+                            onClick={saveDetails}
+                        >
+                            Save
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

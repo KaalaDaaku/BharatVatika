@@ -6,6 +6,7 @@ import {
 } from "../../utils/firebase/firebaseauth.utils";
 
 import { useNavigate } from "react-router-dom";
+import "./form2.css";
 
 const defaultFormState = {
   displayName: "",
@@ -74,6 +75,7 @@ const RegistrationForm = () => {
   };
 
   return (
+    <div className="form">
     <form onSubmit={handleSubmit}>
       <div className="mb-5">
         <h3>REGISTER</h3>
@@ -130,6 +132,7 @@ const RegistrationForm = () => {
         Register
       </button>
     </form>
+    </div>
   );
 };
 
