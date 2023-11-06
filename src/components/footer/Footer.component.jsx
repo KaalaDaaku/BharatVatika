@@ -23,13 +23,7 @@ const Footer = () => {
         <div className="container text-center text-md-start mt-5">
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <div className=" mb-4">
-                <img
-                  src="https://i.ibb.co/Vgx9sq8/fancy-hut-logo.png"
-                  alt="logo"
-                  className="nav-logo"
-                />
-              </div>
+              <h1>Bharat Vatika</h1>
               <p>
                 We offer our ultimate gratitude towards this amazing nature by
                 providing the best agricultural plants in order sustain a
@@ -85,31 +79,25 @@ const Footer = () => {
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
-                <i className="fas fa-home me-3"></i> 23/A, Pilligalla Road,
-                <br />
-                Angunawela, Peradeniya,
-                <br />
-                Kandy, Sri Lanka
+                <i className="fas fa-home me-3"></i>Kopar Khairane, Navi Mumbai.
               </p>
               <p>
                 <i className="fas fa-envelope me-3"></i>
-                fancyhutplants@gmail.com
+                sumeetparab4113@gmail.com
               </p>
               <p>
-                <i className="fas fa-phone me-3"></i> + 94 78 533 7984
+                <i className="fas fa-phone me-3"></i> + 91 8779536101
               </p>
-              <p>
-                <i className="fas fa-phone me-3"></i> + 94 75 506 5056
-              </p>
+
             </div>
           </div>
         </div>
       </section>
       <div className="text-center p-4">
-        © 2022 Copyright:
+        © 2023 Copyright:
         <a className="text-reset fw-bold" href="/">
           {" "}
-          Fancy Hut Plants
+          Bharat Vatika
         </a>
       </div>
     </footer>

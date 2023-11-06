@@ -11,10 +11,20 @@ import {
   startAt,
   endAt,
   where,
+  setDoc,
   orderBy,
   getDoc,
   updateDoc,
 } from "firebase/firestore";
+import { firestore } from "./firebase.config";
+export const saveItem = async (data) => {
+  await setDoc(doc(firestore, "plant", `${Date.now()}`), data, {
+    merge: true,
+  });
+};
+
+
+
 
 export const sendMessage = async (formData) => {
   const { name, email, subject, message } = formData;

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebaseauth.utils";
 
+
 const defaultFormState = {
   sKey: "",
 };
@@ -110,9 +111,11 @@ const Header = () => {
                   Sign Out
                 </a>
               ) : (
-                <a className="btn btn-outline-light" href="/auth">
-                  Sign In
-                </a>
+                <><a className="btn btn-outline-light" href="/sell">
+                    Sell?
+                  </a><a className=" demo btn btn-outline-light" href="/auth">
+                      Sign In
+                    </a></>
               )}
             </div>
           </div>

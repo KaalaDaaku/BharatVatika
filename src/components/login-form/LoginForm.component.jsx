@@ -6,7 +6,7 @@ import {
   auth,
 } from "../../utils/firebase/firebaseauth.utils";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useEffect } from "react";
 
@@ -152,6 +152,7 @@ const LoginForm = () => {
           >
             Forgot Password?
           </a>
+          New Account? <Link to='/register' >Register Here</Link> 
         </div>
       </form>
 
@@ -202,6 +203,7 @@ const LoginForm = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );

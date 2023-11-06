@@ -31,6 +31,8 @@ import ProductSingle from "../components/product-single/ProductSingle.component"
 import BlogSingle from "../components/blog-single/BlogSingle.component";
 import Checkout from "../components/checkout/Checkout.component";
 import AdminOrders from "../components/admin-orders/AdminOrders.component";
+import Sell from "../components/sell/sell";
+import Register from "../components/Register";
 
 function Layout() {
   const { currentUser } = useContext(UserContext);
@@ -47,11 +49,13 @@ function Layout() {
         }
       >
         <Route index element={<Home />} />
+        <Route path="register" element={<Register />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="shop" element={<Shop />} />
         <Route path="blog" element={<Blog />} />
         <Route path="auth" element={<Authentication />} />
+        <Route path="sell" element={<Sell />} />
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="product" element={<ProductSingle />} />

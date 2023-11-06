@@ -11,9 +11,7 @@ const Authentication = () => {
         <div className="col-lg-6 col-sm-12 p-lg-5 p-sm-0">
           <LoginForm />
         </div>
-        <div className="col-lg-6 col-sm-12 p-lg-5 p-sm-0">
-          <RegistrationForm />
-        </div>
+       
       </div>
     </Fragment>
   );
