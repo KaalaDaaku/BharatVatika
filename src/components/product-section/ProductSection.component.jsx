@@ -26,7 +26,7 @@ const ProductSection = () => {
            
           </div>
 
-          <div className=" card m-4">
+          {/* <div className=" card m-4">
             <a >
               <img
                 className="card-img-top product-img"
@@ -56,7 +56,7 @@ const ProductSection = () => {
               </div>
             </a>
            
-          </div>
+          </div> */}
 
 
           
