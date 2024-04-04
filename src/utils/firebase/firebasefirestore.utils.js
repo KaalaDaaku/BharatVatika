@@ -24,6 +24,14 @@ export const saveItem = async (data) => {
 };
 
 
+export const getAllPlants = async () => {
+  const items = await getDocs(
+    query(collection(firestore, "plant"), orderBy("id", "desc"))
+  );
+
+  return items.docs.map((doc) => doc.data());
+};
+
 
 
 export const sendMessage = async (formData) => {

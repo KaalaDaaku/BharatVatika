@@ -12,7 +12,7 @@ import "./Cart.styles.css";
 
 const calculateTotal = (cartItems) => {
   const total = cartItems.reduce(
-    (count, cartItem) => count + cartItem.data.data.price * cartItem.data.qty,
+    (count, cartItem) => count + cartItem.data.price * cartItem.data.qty,
     0
   );
   return total;
@@ -25,6 +25,7 @@ const Cart = () => {
     auth.onAuthStateChanged((user) => {
       if (user) {
         getCartData(user.uid).then((cartData) => {
+          console.log(cartData)
           setCartItems(cartData);
         });
       }
@@ -51,13 +52,13 @@ const Cart = () => {
             </thead>
             <tbody>
               {cartItems.length > 0 ? (
-                cartItems.map((cartItem) => (
+                cartItems.map((cartItem, index) => (
                   <tr key={cartItem.id}>
                     <td>
                       <button
                         onClick={() =>
-                          deleteCartItem(cartItem.id).then(() => {
-                            getCartData(auth.currentUser.uid).then(
+                          deleteCartItem(cartItem?.id).then(() => {
+                            getCartData(auth?.currentUser.uid).then(
                               (cartData) => {
                                 setCartItems(cartData);
                               }
@@ -72,17 +73,17 @@ const Cart = () => {
                     </td>
                     <td>
                       <img
-                        src={cartItem.data.data.image}
-                        alt={cartItem.data.data.name}
+                        src={cartItem?.data?.imageURL}
+                        alt={cartItem.data?.title}
                         className="img-thumbnail cart-itm-img"
                       />
                     </td>
                     <a
-                      href={`/product/?item=${cartItem.data.id}`}
+                      href={`/product/?item=${cartItem.data?.id}`}
                     >
-                    <td>{cartItem.data.data.name}</td>
+                    <td>{cartItem.data?.title}</td>
                     </a>
-                    <td>Rs. {cartItem.data.data.price}/=</td>
+                    <td>Rs. {cartItem.data?.price}/=</td>
                     <td>
                       <div
                         className="btn-group"
@@ -105,7 +106,7 @@ const Cart = () => {
                           -
                         </button>
                         <button type="button" className="btn btn-success">
-                          {cartItem.data.qty}
+                          {cartItem?.data.qty}
                         </button>
                         <button
                           onClick={() =>
@@ -125,7 +126,7 @@ const Cart = () => {
                       </div>
                     </td>
                     <td>
-                      Rs. {cartItem.data.data.price * cartItem.data.qty}/=
+                      Rs. {cartItem?.data?.price * cartItem?.data?.qty}/=
                     </td>
                   </tr>
                 ))

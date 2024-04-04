@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 
 import ProductLoop from "../../components/product-loop/ProductLoop.component"
+import ProductSection from "../../components/product-section/ProductSection.component";
 
 const Shop = () => {
 
@@ -12,7 +13,7 @@ const Shop = () => {
     <>
     {sKey != null ? <h2 className="mt-4">Search Results for {sKey}</h2> : <h2 className="mt-4">Shop</h2>}
     {category != null ? <h4 className="mt-4">Category: {category}</h4> : <></>}
-    
+    <ProductSection />
     <div className="row">
       <ProductLoop/>
     </div>

@@ -98,7 +98,7 @@ const CreateItem = () => {
                     title: title,
                     imageURL: imageAsset,
                     category: category,
-                    age: age,
+                    age: plantAge,
 
                     price: price,
                 };

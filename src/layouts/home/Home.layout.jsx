@@ -11,7 +11,8 @@ const Home = () => {
   return (
     <Fragment>
       <Outlet />
-      <Slider /><ProductSection />
+      <Slider />
+      <ProductSection />
       {/* <CatagorySection/> */}
       <AboutSection />
 
