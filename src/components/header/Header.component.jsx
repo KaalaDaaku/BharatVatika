@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebaseauth.utils";
 
-
 const defaultFormState = {
   sKey: "",
 };
@@ -31,7 +30,7 @@ const Header = () => {
   const searchHandler = (e) => {
     e.preventDefault();
     navigate(`/shop?search=${sKey}`);
-  }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,7 +42,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-           <p className="logo" >Bharat Vatika</p>
+            <p className="logo">Bharat Vatika</p>
           </a>
           <button
             className="navbar-toggler"
@@ -107,15 +106,23 @@ const Header = () => {
             </div>
             <div>
               {currentUser ? (
-                <a className="btn btn-outline-light" onClick={signOutHandler}>
-                  Sign Out
-                </a>
-              ) : (
-                <><a className="btn btn-outline-light" href="/sell">
+                <>
+                  <a className="btn btn-outline-light mr-5" href="/sell">
                     Sell?
-                  </a><a className=" demo btn btn-outline-light" href="/auth">
-                      Sign In
-                    </a></>
+                  </a>
+                  <a
+                    className="btn btn-outline-light ml-5"
+                    onClick={signOutHandler}
+                  >
+                    Sign Out
+                  </a>
+                </>
+              ) : (
+                <>
+                  <a className=" demo btn btn-outline-light" href="/auth">
+                    Sign In
+                  </a>
+                </>
               )}
             </div>
           </div>

@@ -6,14 +6,48 @@ import { auth, db } from "../../utils/firebase/firebaseauth.utils";
 import { addDoc, collection } from "firebase/firestore";
 const ProductSection = () => {
   const [recentPlant, setRecentPlant] = useState([]);
+  const [plantdata, setplantdata] = useState([
+    {
+      name: "Winter Savory",
+      price: "69.99",
+      age: "0 - 2 days",
+      id: "1712237086110",
+      imageURL:
+        "https://firebasestorage.googleapis.com/v0/b/bharatvatika-ad7af.appspot.com/o/Images%2F1712237067149-coder-amoled-.png?alt=media&token=375cace3-0717-48a7-9956-f92eda978562",
+      title: "jvnkdfnv",
+    },
+    {
+      category: "decorative",
+      price: "69.99",
+      age: "0 - 2 days",
+      id: "1712237086110",
+      imageURL:
+        "https://firebasestorage.googleapis.com/v0/b/bharatvatika-ad7af.appspot.com/o/Images%2F1712237067149-coder-amoled-.png?alt=media&token=375cace3-0717-48a7-9956-f92eda978562",
+      title: "jvnkdfnv",
+    },
+    {
+      category: "decorative",
+      price: "69.99",
+      age: "0 - 2 days",
+      id: "1712237086110",
+      imageURL:
+        "https://firebasestorage.googleapis.com/v0/b/bharatvatika-ad7af.appspot.com/o/Images%2F1712237067149-coder-amoled-.png?alt=media&token=375cace3-0717-48a7-9956-f92eda978562",
+      title: "jvnkdfnv",
+    },
+  ]);
   useEffect(() => {
     getAllPlants().then((res) => setRecentPlant(res.slice(0, 3)));
+    // console.log(recentPlant);
   }, []);
 
   const [product, setProduct] = useState({});
 
+  const hello = () => {
+    console.log("hello");
+  };
+
   const addProductToCart = async (plant) => {
-    console.log(plant)
+    console.log(plant);
 
     if (!auth.currentUser) {
       alert("Please log in to add items to your cart");
@@ -55,7 +89,10 @@ const ProductSection = () => {
               <div className="">
                 <h5 className="">{plant.title}</h5>
                 <p className="">Rs. {plant.price}</p>
-                <button className="button" onClick={()=> addProductToCart(plant)}>
+                <button
+                  className="button"
+                  onClick={() => addProductToCart(plant)}
+                >
                   Buy Now
                 </button>
               </div>
@@ -109,9 +146,30 @@ const ProductSection = () => {
         </div> */}
       </div>
 
+      <h3>Recommeded</h3>
+      <hr />
+
+      <div className="bbc">
+        {plantdata?.map((plant) => (
+          <div className=" m-4 " key={plant.id}>
+            <a>
+              <img className=" product-img" src={plant.imageURL} alt="hb" />
+              <div className="">
+                <h5 className="">{plant.title}</h5>
+                <p className="">Rs. {plant.price}</p>
+                <button
+                  className="button"
+                  onClick={() => addProductToCart(plant)}
+                >
+                  Buy Now
+                </button>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
       <div className="m-5">
-        <h3>Recommeded</h3>
-        <hr />
         <div className="bbc">
           <div className=" card m-4">
             <a>
@@ -123,7 +181,12 @@ const ProductSection = () => {
               <div className="card-body">
                 <h5 className="card-title">Winter Savory</h5>
                 <p className="card-text">Rs. 499</p>
-                <button className="button">Buy Now</button>
+                <button
+                  className="button"
+                  // onClick={() => addProductToCart(plant)}
+                >
+                  Buy Now
+                </button>
               </div>
             </a>
           </div>
