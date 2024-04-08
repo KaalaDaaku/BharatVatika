@@ -128,7 +128,7 @@ const Checkout = () => {
               </div>
               <div className="col-6">
                 <h6 className="card-subtitle mb-2 mt-2 text-end">
-                  {cartItems.length > 0 ? "Rs. 400/= " : "Rs. 0/= "}
+                  {cartItems.length > 0 ? "Rs. 20/= " : "Rs. 0/= "}
                 </h6>
               </div>
               <hr />
