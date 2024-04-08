@@ -104,12 +104,13 @@ const Header = () => {
                 <i className="fa-solid fa-bag-shopping fs-3"></i>
               </a>
             </div>
-            <div>
+            <div id="sell2">
               {currentUser ? (
                 <>
-                  <a className="btn btn-outline-light mr-5" href="/sell">
+                  <a className="btn btn-outline-light mr-6 " href="/sell" id="sell">
                     Sell?
                   </a>
+                  
                   <a
                     className="btn btn-outline-light ml-5"
                     onClick={signOutHandler}
@@ -119,7 +120,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <a className=" demo btn btn-outline-light" href="/auth">
+                  <a className=" demo btn btn-outline-light" href="/auth" >
                     Sign In
                   </a>
                 </>
