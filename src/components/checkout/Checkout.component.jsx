@@ -47,7 +47,7 @@ const Checkout = () => {
           cartItems,
           deliveryDate,
           deliveryAddress,
-          calculateTotal(cartItems) + 400
+          calculateTotal(cartItems) + 20
         );
         resetForm();
       } catch (error) {
@@ -79,6 +79,7 @@ const Checkout = () => {
       }
     });
   }, [deliveryAddress, deliveryDate]);
+  console.log(cartItems.data)
 
   return (
     <div className="m-3 row justify-content-center">
@@ -142,7 +143,7 @@ const Checkout = () => {
               <div className="col-6">
                 <h4 className="card-subtitle mb-2 mt-2 text-end">
                   {cartItems.length > 0
-                    ? "Rs." + (calculateTotal(cartItems) + 400) + "/="
+                    ? "Rs." + (calculateTotal(cartItems) + 20) + "/="
                     : "Rs. 0/= "}
                 </h4>
               </div>
@@ -203,7 +204,7 @@ const Checkout = () => {
               <div className="mt-5 mb-2 w-100">
                 <PaypalCheckout
                   cartItems={cartItems}
-                  total={calculateTotal(cartItems) + 400}
+                  total={calculateTotal(cartItems) + 20}
                   address={deliveryAddress}
                   deliveryDate={deliveryDate}
                 />
