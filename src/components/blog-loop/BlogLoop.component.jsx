@@ -48,7 +48,7 @@ const BlogLoop = () => {
     </div>
     ))}
     <div>
-      <button className="btn btn-outline-dark shadow-none mt-4" onClick={loadNext}>Load More...</button>
+      {/* <button className="btn btn-outline-dark shadow-none mt-4" onClick={loadNext}>Load More...</button> */}
     </div>
     </>
   );

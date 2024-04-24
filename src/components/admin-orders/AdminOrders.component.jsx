@@ -208,7 +208,7 @@ const AdminOrders = () => {
                 </div>
                 <div className="col-6">
                   <h6 className="card-subtitle mb-2 mt-2 text-end">
-                    Rs. 400/=
+                    Rs. 20/=
                   </h6>
                 </div>
                 <hr />
